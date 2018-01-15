@@ -2,10 +2,11 @@ function love.load()
   local img = love.graphics.newImage("index.png")
   
   emitter = love.graphics.newParticleSystem(img, 32)
-  emitter:setLinearAcceleration(75,75,-75,-75)
   emitter:setParticleLifetime(1,1)
-  emitter:setSpeed(50,50)
   emitter:setColors(255,0,0,255)
+  emitter:setSpread(6.28)
+  emitter:setSpeed(100,500)
+  emitter:setLinearDamping(5)
 end
 
 function love.draw()
