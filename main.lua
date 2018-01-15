@@ -1,22 +1,37 @@
+require 'fire'
+require 'smoke'
+require 'steam'
+require 'blood'
+
 function love.load()
-  local img = love.graphics.newImage("index.png")
-  
-  emitter = love.graphics.newParticleSystem(img, 32)
-  emitter:setParticleLifetime(1,1)
-  emitter:setColors(255,0,0,255)
-  emitter:setSpread(6.28)
-  emitter:setSpeed(100,500)
-  emitter:setLinearDamping(5)
+  emitter = newfire()
 end
 
 function love.draw()
+  love.graphics.setColor(0x81,0xa5,0x61,255)
+  love.graphics.rectangle(0,0,love.screen.getWidth(), love.screen.getHeight())
+  love.graphics.setColor(255,255,255,255)
+
   --this draws our particles
   love.graphics.draw(emitter, love.mouse.getX(), love.mouse.getY())
 end
 
+function love.keyPressed()
+  if love.keyboard.isDown('q') then
+    emitter = newfire()
+  elseif love.keyboard.isDown('w') then
+    emitter = newsmoke()
+  elseif love.keyboard.isDown('e') then
+    emitter = newsteam()
+  elseif love.keyboard.isDown('r') then
+    emitter = newblood()
+  end
+
 function love.mousePressed()
   if love.mouse.isDown(1) then
-    emitter:emit(32)
+    emitter:start()
+  else
+    emitter:stop()
 	end
 end
 
