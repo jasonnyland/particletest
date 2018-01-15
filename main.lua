@@ -26,6 +26,7 @@ function love.keyPressed()
   elseif love.keyboard.isDown('r') then
     emitter = newblood()
   end
+end
 
 function love.mousePressed()
   if love.mouse.isDown(1) then
