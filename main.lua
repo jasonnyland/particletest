@@ -9,7 +9,7 @@ end
 
 function love.draw()
   love.graphics.setColor(0x81,0xa5,0x61,255)
-  love.graphics.rectangle(0,0,love.screen.getWidth(), love.screen.getHeight())
+  love.graphics.rectangle(0,0,love.graphics.getWidth(), love.graphics.getHeight())
   love.graphics.setColor(255,255,255,255)
 
   --this draws our particles
@@ -26,6 +26,7 @@ function love.keyPressed()
   elseif love.keyboard.isDown('r') then
     emitter = newblood()
   end
+end
 
 function love.mousePressed()
   if love.mouse.isDown(1) then
