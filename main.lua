@@ -16,14 +16,15 @@ function love.draw()
   love.graphics.draw(emitter, love.mouse.getX(), love.mouse.getY())
 end
 
-function love.keyPressed()
-  if love.keyboard.isDown('q') then
+function love.keypressed(key)
+  print("key"..key)
+  if key == 'q' then
     emitter = newfire()
-  elseif love.keyboard.isDown('w') then
+  elseif key == 'w' then
     emitter = newsmoke()
-  elseif love.keyboard.isDown('e') then
+  elseif key == 'e' then
     emitter = newsteam()
-  elseif love.keyboard.isDown('r') then
+  elseif key == 'r' then
     emitter = newblood()
   end
 end
