@@ -2,6 +2,7 @@ require 'fire'
 require 'smoke'
 require 'steam'
 require 'blood'
+require 'test'
 
 function love.load()
   emitter = newfire()
@@ -26,6 +27,8 @@ function love.keypressed(key)
     emitter = newsteam()
   elseif key == 'r' then
     emitter = newblood()
+  elseif key == 't' then
+    emitter = newtest()
   end
 end
 
