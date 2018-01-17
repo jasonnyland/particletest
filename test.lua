@@ -4,7 +4,7 @@ function newtest()
 
   local emitter = love.graphics.newParticleSystem(img, 20)
   emitter:setEmissionRate(1)
-  emitter:setSize(4)
+  emitter:setSizes(4)
   emitter:setSpin(-7,7)
   emitter:setSpinVariation(0)
   emitter:setParticleLifetime(5,5)
