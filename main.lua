@@ -4,6 +4,10 @@ require 'steam'
 require 'blood'
 require 'test'
 require 'explode'
+require 'explode_sprite'
+require 'animation'
+require 'image'
+require 'lib/anim8/anim8'
 
 function love.load()
   emitter = newfire()
@@ -32,6 +36,8 @@ function love.keypressed(key)
     emitter = newtest()
   elseif key == 'y' then
     emitter = newexplode()
+  elseif key == 'u' then
+    emitter = newexplode_sprite()
   end
 end
 
@@ -45,5 +51,6 @@ end
 
 function love.update(dt)
   emitter:update(dt)
+  animation.explode:update()
   love.mousePressed()
 end
