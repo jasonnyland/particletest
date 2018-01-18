@@ -5,11 +5,13 @@ require 'blood'
 require 'test'
 require 'explode'
 require 'explode_sprite'
-require 'animation'
-require 'image'
-require 'lib/anim8/anim8'
+anim8 = require 'lib/anim8/anim8'
+image = require 'image'
+animation = require 'animation'
 
 function love.load()
+  image.init()
+  animation.init()
   emitter = newfire()
 end
 
@@ -51,6 +53,6 @@ end
 
 function love.update(dt)
   emitter:update(dt)
-  animation.explode:update()
+  animation.explode:update(dt)
   love.mousePressed()
 end
